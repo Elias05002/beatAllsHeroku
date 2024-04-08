@@ -1,0 +1,90 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="/assets/images/Imagen2.png">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+    <title>Actualizar producto</title>
+</head>
+<header>
+    <%- include('./layout/nav.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseño.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseñoActualizacion.ejs'); %>
+</header>
+<body>
+<div class="contact_form">
+    <div class="formulario">
+    <div class="container">
+        <form action="/productosRegistrados/<%- ID_Producto %>" method="post">
+            <div class="mb-3">
+                <label for="Nombre_producto" class="form-label">Nombre del producto:</label>
+                <input name="Nombre_producto" id="Nombre_producto" class="form-control" type="text" value="<%- Nombre_producto %>">
+                <span class="form-text">Nombre del producto actual: <%- Nombre_producto %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Descripcion" class="form-label">Descripción:</label>
+                <input name="Descripcion" id="Descripcion" class="form-control" type="text" value="<%- Descripcion %>">
+                <span class="form-text">Descripción actual: <%- Descripcion %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Color" class="form-label">Color:</label>
+                <input name="Color" id="Color" class="form-control" type="text" value="<%- Color %>">
+                <span class="form-text">Color actual: <%- Color %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Talla" class="form-label">Talla:</label>
+                <input name="Talla" id="Talla" class="form-control" type="text" value="<%- Talla %>">
+                <span class="form-text">Talla actual: <%- Talla %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Material" class="form-label">Material:</label>
+                <input name="Material" id="Material" class="form-control" type="text" value="<%- Material %>">
+                <span class="form-text">Material actual: <%- Material %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Marca" class="form-label">Marca:</label>
+                <input name="Marca" id="Marca" class="form-control" type="text" value="<%- Marca %>">
+                <span class="form-text">Marca: <%- Marca %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Temporada" class="form-label">Temporada:</label>
+                <input name="Temporada" id="Temporada" class="form-control" type="text" value="<%- Temporada %>">
+                <span class="form-text">Temporada actual: <%- Temporada %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Existencias" class="form-label">Existencias:</label>
+                <input name="Existencias" id="Existencias" class="form-control" type="text" value="<%- Existencias %>">
+                <span class="form-text">Existencias actuales: <%- Existencias %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Precio" class="form-label">Precio:</label>
+                <input name="Precio" id="Precio" class="form-control" type="text" value="<%- Precio %>">
+                <span class="form-text">Precio actual: <%- Precio %></span>
+            </div>
+            <input type="hidden" name="_method" value="put">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+<footer>
+    <%- include('./layout/footer.ejs'); %>
+</footer>
+</html>

@@ -1,0 +1,74 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registro de productos</title>
+	<link rel="shortcut icon" type="image/png" href="/assets/images/LOGO5.png">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+</head>
+<header>
+    <%- include('./layout/nav.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseño.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseñoRegistroProductos.ejs'); %>
+</header>
+<body>
+<div class="contact_form">
+    <div class="formulario">
+    <form action="/registroProductos" method="post" enctype="multipart/form-data">
+        <label for="Nombre">Nombre del producto</label>
+        <input name="Nombre_producto" id="Nombre_producto" type="text">
+        <br>
+        <label for="Descripcion">Descripción</label>
+        <input name="Descripcion" id="Descripcion" type="text">
+        <br>
+        <label for="Color">Color</label>
+        <input name="Color" id="Color" type="text">
+        <br>
+        <label for="Talla">Talla</label>
+        <input name="Talla" id="Talla" type="text">
+        <br>
+        <label for="Material">Material</label>
+        <input name="Material" id="Material" type="text">
+        <br>
+        <label for="Marca">Marca</label>
+        <input name="Marca" id="Marca" type="text">
+        <br>
+        <label for="Temporada">Temporada</label>
+        <input name="Temporada" id="Temporada" type="text">
+        <br>
+        <label for="Precio">Precio</label>
+        <input name="Precio" id="Precio" type="text">
+        <br>
+        <label for="Existencias">Existencias</label>
+        <input name="Existencias" id="Existencias" type="text">
+        <br>
+        <label for="ID_Proveedor">ID Proveedor</label>
+        <% consultar_Proveedor.forEach(proveedor => { %>
+            <div class="contacto-form">
+                <input type="radio" name="ID_Proveedor" value="<%= proveedor.ID_Proveedor %>" class="radio-btn">
+                <label for="<%= proveedor.ID_Proveedor %>" class="proveedor-label">
+                    <img height="100" width="100" src="<%= proveedor.filepath %>" alt="Descripción de la imagen" class="proveedor-img">
+                </label>
+            </div>
+        <% }); %>      
+        <br>
+        <label for="IMG">Imagen</label>
+        <input name="IMG" id="IMG" type="file">
+        <br><br>
+        <button type="submit">Registrar producto</button>
+    </form> 
+    </div>
+</div>
+</body>
+<footer>
+    <%- include('./layout/footer.ejs'); %>
+</footer>
+</html>

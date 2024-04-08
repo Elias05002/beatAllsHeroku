@@ -1,0 +1,68 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, https://imransdesign.com/">
+	<link rel="shortcut icon" type="image/png" href="/assets/images/Imagen2.png">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+    <title>Registro de usuarios</title>
+</head>
+<header>
+    <%- include('./layout/nav.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseño.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseñoregistro.ejs'); %>
+</header>
+<body>
+<div class="contact_form">
+    <div class="formulario">
+    <form action="/registroUsuarios" method="post">
+        <label for="Nombre">Nombre</label>
+        <input name="Nombre" id="Nombre" type="text">
+        <br>
+        <label for="Apellido">Apellido</label>
+        <input name="Apellido" id="Apellido" type="text">
+        <br>
+        <label for="Direccion">Dirección</label>
+        <input name="Direccion" id="Direccion" type="text">
+        <br>
+        <label for="Edad">Edad</label>
+        <input name="Edad" id="Edad" type="text">
+        <br>
+        <label for="Fecha_nacimiento">Fecha de nacimiento</label>
+        <input name="Fecha_nacimiento" id="Fecha_nacimiento" type="date" value="2000-01-01">
+        <br>
+        <label for="Telefono">Telefono</label>
+        <input name="Telefono" id="Telefono" type="text">
+        <br>
+        <label for="Correo">Correo electrónico</label>
+        <input name="Correo" id="Correo" type="email">
+        <br>
+        <label for="Rol">Rol</label><br>
+        <select name="Rol" id="Rol">
+            <option value="Empleado" id="Empleado">Empleado</option>
+            <option value="Administrador" id="Administrador">Administrador</option>
+        </select>
+        <br>
+        <label for="Nombre_usuario">Usuario</label>
+        <input name="Nombre_usuario" id="Nombre_usuario" type="text">
+        <br>
+        <label for="Contrasena">Contraseña</label>
+        <input name="Contrasena" id="Contrasena" type="password">
+        <br><br>
+        <button type="submit">Registrarse</button>
+    </form> 
+    </div>
+</div>
+</body>
+<footer>
+    <%- include('./layout/footer.ejs'); %>
+</footer>
+</html>

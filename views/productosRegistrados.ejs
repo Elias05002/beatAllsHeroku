@@ -1,0 +1,81 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="/assets/images/LOGO5.png">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+    <title><%= titulo %></title> 
+</head>
+<header>
+    <%- include('./layout/nav.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseño.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseñoProductosRegistrados.ejs'); %>
+</header>
+<body>
+    <center>
+<div class="cart-section mt-50 mb-50">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="cart-table-wrap">
+                    <table class="cart-table">
+                        <thead class="cart-table-head">
+                            <tr class="table-head-row">
+                                <th>ID</th>
+                                <th>Nombre producto</th>
+                                <th>Descripción</th>
+                                <th>Color</th>
+                                <th>Talla</th>
+                                <th>Material</th>
+                                <th>Marca</th>
+                                <th>Temporada</th>
+                                <th>Existencias</th>
+                                <th>Precio</th>
+                                <th>Precio al público</th>
+                                <th>ID Proveedor</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% consultar_Productos.forEach(producto => { %>
+                                <tr class="table-head-row">
+                                    <td><%= producto.ID_Producto %></td>
+                                    <td><%= producto.Nombre_producto %></td>
+                                    <td><%= producto.Descripcion %></td>
+                                    <td><%= producto.Color %></td>
+                                    <td><%= producto.Talla %></td>
+                                    <td><%= producto.Material %></td>
+                                    <td><%= producto.Marca %></td>
+                                    <td><%= producto.Temporada %></td>
+                                    <td><%= producto.Existencias %></td>
+                                    <td><%= producto.Precio %></td>
+                                    <td><%= producto.Precio_publico %></td>
+                                    <td><%= producto.ID_Proveedor %></td>
+                                    <td>
+                                        <a href="/productosRegistrados/<%= producto.ID_Producto %>">Borrar</a>
+                                        <a href="/actualizacionProductos?id=<%= producto.ID_Producto %>&nombre_producto=<%= producto.Nombre_producto %>&descripcion=<%= producto.Descripcion %>&color=<%= producto.Color %>&talla=<%= producto.Talla %>&material=<%= producto.Material %>&marca=<%= producto.Marca %>&temporada=<%= producto.Temporada %>&existencias=<%= producto.Existencias %>&precio=<%= producto.Precio %>">Actualizar</a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+</body>
+<footer>
+    <%- include('./layout/footer.ejs'); -%>
+</footer>
+</html>

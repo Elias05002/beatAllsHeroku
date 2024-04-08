@@ -1,0 +1,67 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="/assets/images/Imagen2.png">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+    <title>Actualización clientes</title>
+</head>
+<header>
+    <%- include('./layout/nav.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseño.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseñoActualizacion.ejs'); %>
+</header>
+<body>
+<div class="contact_form">
+    <div class="formulario">
+    <div class="container">
+        <form action="/clientesRegistrados/<%- ID_Cliente %>" method="post">
+            <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre:</label>
+                <input name="Nombre" id="Nombre" class="form-control" type="text" value="<%- Nombre %>">
+                <span class="form-text">Nombre actual: <%- Nombre %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Apellido" class="form-label">Apellido:</label>
+                <input name="Apellido" id="Apellido" class="form-control" type="text" value="<%- Apellido %>">
+                <span class="form-text">Apellido actual: <%- Apellido %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Direccion" class="form-label">Dirección:</label>
+                <input name="Direccion" id="Direccion" class="form-control" type="text" value="<%- Direccion %>">
+                <span class="form-text">Dirección actual: <%- Direccion %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Edad" class="form-label">Edad:</label>
+                <input name="Edad" id="Edad" class="form-control" type="text" value="<%- Edad %>">
+                <span class="form-text">Edad actual: <%- Edad %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Fecha_nacimiento" class="form-label">Fecha de nacimiento:</label>
+                <input name="Fecha_nacimiento" id="Fecha_nacimiento" class="form-control" type="date" value="<%- Fecha_nacimiento %>">
+                <span class="form-text">Fecha de nacimiento actual: <%- Fecha_nacimiento %></span>
+            </div>
+
+            <input type="hidden" name="_method" value="put">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+<footer>
+    <%- include('./layout/footer.ejs'); %>
+</footer>
+</html>

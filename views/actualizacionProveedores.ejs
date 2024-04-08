@@ -1,0 +1,67 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="/assets/images/Imagen2.png">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
+    <title>Actualización de proveedor</title>
+</head>
+<header>
+    <%- include('./layout/nav.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseño.ejs'); %>
+</header>
+
+<header>
+    <%- include('./layout/diseñoActualizacion.ejs'); %>
+</header>
+<body>
+<div class="contact_form">
+    <div class="formulario">
+    <div class="container">
+        <form action="/proveedoresRegistrados/<%- ID_Proveedor %>" method="post">
+            <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre:</label>
+                <input name="Nombre" id="Nombre" class="form-control" type="text" value="<%- Nombre %>">
+                <span class="form-text">Nombre actual: <%- Nombre %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Apellido" class="form-label">Apellido:</label>
+                <input name="Apellido" id="Apellido" class="form-control" type="text" value="<%- Apellido %>">
+                <span class="form-text">Apellido actual: <%- Apellido %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Telefono" class="form-label">Telefono:</label>
+                <input name="Telefono" id="Telefono" class="form-control" type="text" value="<%- Telefono %>">
+                <span class="form-text">Telefono: <%- Telefono %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Correo" class="form-label">Correo electrónico:</label>
+                <input name="Correo" id="Correo" class="form-control" type="email" value="<%- Correo %>">
+                <span class="form-text">Correo: <%- Correo %></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Empresa" class="form-label">Empresa:</label>
+                <input name="Empresa" id="Empresa" class="form-control" type="text" value="<%- Empresa %>">
+                <span class="form-text">Empresa: <%- Empresa %></span>
+            </div>
+
+            <input type="hidden" name="_method" value="put">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+<footer>
+    <%- include('./layout/footer.ejs'); %>
+</footer>
+</html>
